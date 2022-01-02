@@ -8,6 +8,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.mikhaellopez.circularfillableloaders.CircularFillableLoaders;
+
+import java.util.Random;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link MonthFragment#newInstance} factory method to
@@ -15,6 +19,7 @@ import android.view.ViewGroup;
  */
 public class MonthFragment extends Fragment {
 
+    CircularFillableLoaders circularFillableLoaders;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -59,6 +64,21 @@ public class MonthFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_month, container, false);
+        View view = inflater.inflate(R.layout.fragment_month, container, false);
+
+        circularFillableLoaders = view.findViewById(R.id.circle_progress_bar);
+
+        circularFillableLoaders.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Random r = new Random();
+                int progress = r.nextInt(100-1)+1;
+                circularFillableLoaders.setProgress(progress);
+
+
+            }
+        });
+
+        return  view;
     }
 }
