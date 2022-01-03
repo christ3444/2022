@@ -5,6 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 class hope {
+    /*
 
     public static void main(String[] arg){
 
@@ -16,4 +17,7 @@ class hope {
         System.out.println(h);
         System.out.println(min);
     }
+
+
+     */
 }
